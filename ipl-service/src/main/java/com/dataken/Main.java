@@ -5,6 +5,10 @@ import com.dataken.dao.DeliveryDAO;
 import com.dataken.dao.MatchDAO;
 import com.dataken.model.Delivery;
 import com.dataken.model.Match;
+import jakarta.ws.rs.container.ContainerRequestContext;
+import jakarta.ws.rs.container.ContainerResponseContext;
+import jakarta.ws.rs.container.ContainerResponseFilter;
+import jakarta.ws.rs.core.MultivaluedMap;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -38,6 +42,7 @@ public class Main {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.dataken package
         final ResourceConfig rc = new ResourceConfig().packages("com.dataken.service");
+        rc.register(new CORSFilter());
 
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
@@ -67,6 +72,18 @@ public class Main {
             deliveryDao.persist(deliveries);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static class CORSFilter implements ContainerResponseFilter {
+
+        public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) {
+
+            MultivaluedMap<String, Object> headers = responseContext.getHeaders();
+
+            headers.add("Access-Control-Allow-Origin", "*");
+            headers.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+            headers.add("Access-Control-Allow-Headers", "Content-Type");
         }
     }
 }

@@ -233,4 +233,3 @@ CSS is the language we use to style an HTML document.
  ![View 2](https://github.com/lokeshpkumar/dataken-training/blob/dk-master/view2.png?raw=true)
  ![View 3](https://github.com/lokeshpkumar/dataken-training/blob/dk-master/view3.png?raw=true)
   
-# dev_siva_master
