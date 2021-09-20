@@ -1,0 +1,21 @@
+.content-headder{
+    position: relative;
+    left: 1%;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  button{
+    top: 20%; 
+    width: 20%; 
+    height: 60%;
+    background-color: #cfe2f3;
+    border:solid 1px black;
+  }

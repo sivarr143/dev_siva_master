@@ -1,0 +1,15 @@
+<div fxFlex fxLayout="column" style="overflow-y: scroll;">
+
+    <table mat-table fxFill [dataSource]="dataSource" class="table">
+        <ng-container *ngFor="let col of cols" [matColumnDef]="col">
+          <hr>
+          <th mat-header-cell *matHeaderCellDef> {{col}} </th>
+          <hr>
+          <td mat-cell *matCellDef="let element"> {{element[col]}} </td>
+          <hr>
+        </ng-container>    
+        <hr>
+        <tr mat-header-row *matHeaderRowDef="cols"></tr>
+        <tr mat-row *matRowDef="let row; columns: cols;"></tr>
+      </table>
+</div>

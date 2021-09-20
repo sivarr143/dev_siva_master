@@ -1,0 +1,52 @@
+<div fxLayout="column" class="outerlayout">
+
+  <div fxLayout="row" class="headding">
+    <button mat-stroked-button>
+      <img src="assets/img/ipl-logo.png" height="50px" width="150px">
+    </button>
+
+    <div class="filters" FxFill fxLayout="row" fxLayoutAlign="end centers">
+
+      <div class="seasons filter">
+        <mat-form-field appearance="fill">
+          <mat-label>Select a Season</mat-label>
+          <mat-select (selectionChange)="seasondata($event)">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let sea of Season" [value]="sea">{{sea}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="Team filter">
+        <mat-form-field appearance="fill">
+          <mat-label>Filter by Team</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let tea of Team" [value]="tea">{{tea}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="Player filter">
+        <mat-form-field appearance="fill">
+          <mat-label>Filter by Player</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let pla of Player" [value]="pla">{{pla}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div fxLayout="row" fxFill class="content">
+    <app-menu></app-menu>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div fxLayout="column" fxLayoutGap="10" fxFlex class="table-chart">
+      <app-content-headder></app-content-headder>
+      <mat-divider></mat-divider>
+      <app-content fxFlex></app-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!-- <p>chart works!</p> -->
+<!-- <div fxLayout="column" fxLayoutAlign="end center" fxLayout.xs="row">
+  
+  
+ 
+</div> -->
+
+<div fxFill fxLayout="column">
+    <div style="background-color:#CFE2F3;"  fxLayout="row" fxLayoutAlign="end center" >
+      <mat-form-field appearance="fill">
+        <mat-label>Chart Select</mat-label>
+        <mat-select (selectionChange)="chartType = $event.value" >
+          <mat-option *ngFor="let char of chart" [value]="char.value">
+            {{char.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  {{chartType}}
+  <div *ngFor="let char of chart">
+    <div *ngIf="(chartType =='bar')">
+      <app-barchart [data]="displayedColumns"></app-barchart>
+    </div>
+    
+  </div>
+  
+  
+  <!-- <div class="charttype" id="child-1" style="width:95%;height:80px;border:2px solid #eeeeee">
+    <h2>&nbsp;&nbsp;chart type</h2>
+  
+    <div class="wrapper">
+      &nbsp;&nbsp;<mat-radio-group [ngModel]="selectedRadioItem">
+        <mat-radio-button *ngFor="let chart of charts" [value]="chart" (change)="radioChange($event)">
+          {{chart}} &nbsp;&nbsp;
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div> -->
+  
