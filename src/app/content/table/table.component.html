@@ -1,7 +1,7 @@
 <div fxFlex fxLayout="column" style="overflow-y: scroll;">
 
-    <table mat-table fxFill [dataSource]="dataSource" class="table">
-        <ng-container *ngFor="let col of cols" [matColumnDef]="col">
+    <table mat-table fxFill [dataSource]="dataSource" class="table" >
+        <ng-container *ngFor="let col of cols" [matColumnDef]="col" >
           <hr>
           <th mat-header-cell *matHeaderCellDef> {{col}} </th>
           <hr>
