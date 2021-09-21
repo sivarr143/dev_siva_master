@@ -1,6 +1,6 @@
 <mat-selection-list [multiple]="false" (selectionChange)="onchange($event)">
     <mat-list-option *ngFor="let ml of menulist" [value]="ml">
-      {{ml}}
+      <a routerLink="content" routerLinkActive="active">{{ml}}</a>
     </mat-list-option>
   </mat-selection-list>
   

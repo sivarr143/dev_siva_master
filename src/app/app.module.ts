@@ -59,6 +59,8 @@ import { SelectedValuesService } from './services/selected-values.service';
 import { TesthelloworldServiceService } from './services/testhelloworld-service.service';
 import { TableComponent } from './content/table/table.component';
 import { ChartComponent } from './content/chart/chart.component';
+import { BarComponent } from './content/chart/bar/bar.component';
+import { PieComponent } from './content/chart/pie/pie.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { ChartComponent } from './content/chart/chart.component';
     ContentComponent,
     ContentHeadderComponent,
     TableComponent,
-    ChartComponent
+    ChartComponent,
+    BarComponent,
+    PieComponent
   ],
   imports: [
     BrowserModule,

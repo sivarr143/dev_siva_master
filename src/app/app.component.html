@@ -43,10 +43,10 @@
   <div fxLayout="row" fxFill class="content">
     <app-menu></app-menu>
     <mat-divider [vertical]="true"></mat-divider>
-    <div fxLayout="column" fxLayoutGap="10" fxFlex class="table-chart">
+    <div fxLayout="column" fxLayoutGap="10" fxFlex class="table-chart" >
       <app-content-headder></app-content-headder>
       <mat-divider></mat-divider>
-      <app-content fxFlex></app-content>
+      <app-content fxFlex routerLink="content"> <router-outlet></router-outlet></app-content>
     </div>
   </div>
 </div>
