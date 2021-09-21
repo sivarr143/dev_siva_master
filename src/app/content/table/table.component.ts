@@ -43,6 +43,28 @@ export class TableComponent implements OnInit {
       )
   }
 
+  topbowlers(){
+    if(this.sel.menuoptions === 'topBowlers'){
+      this.cols = ['Name','Runs'];
+      this.matchService.getTopScorers().subscribe(
+        res => {
+          this.Match = res;
+          this.Match = this.toTableData(res);
+        }
+      )
+    }
+    if(this.sel.menuoptions === 'topScorers'){
+      this.cols = ['Name','Wickets'];
+      this.matchService.getTopScorers().subscribe(
+        res => {
+          this.Match = res;
+          this.Match = this.toTableData(res);
+        }
+      )
+    }
+
+  }
+
   toTableData(Match: any) {
     return Object.keys(this.Match).map(d => {
       // let row={}

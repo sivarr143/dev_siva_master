@@ -22,7 +22,7 @@ export class ChartComponent implements OnInit {
 
   set Match(Match:any){
     if(!Match || Match.length <= 0) return;
-    this.displayedColumns = Match[0];
+    this.displayedColumns = Match[Match];
     //this.dataSource = new MatTableDataSource<any>(Match);
   }
 

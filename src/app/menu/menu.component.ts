@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.sel.season='2020';
     this.sel.menuoptions='matchList';
-    this.sel.contentselect='table';
+    this.sel.contentselect='chart';
     
   }
 
@@ -33,7 +33,8 @@ export class MenuComponent implements OnInit {
       }
       else
       {
-        this.matchService.getTopScorers().subscribe(res => this.sel.data=res);
+        this.matchService.getTopScorers().subscribe(res => this.sel.data=console.log(res));
+        
         
       }
       
